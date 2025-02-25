@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Générateur de Citations</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        #quote-container { margin-top: 20px; }
+        button { padding: 10px 20px; font-size: 16px; background: blue; color: white; border: none; cursor: pointer; }
+        button:hover { background: darkblue; }
+    </style>
+</head>
+<body>
+    <h2>Générateur de Citations</h2>
+    <div id="quote-container">
+        <p id="quote">Clique sur le bouton pour afficher une citation.</p>
+        <p id="author">- Auteur inconnu</p>
+        <button onclick="generateQuote()">Nouvelle Citation</button>
+    </div>
+
+    <script>
+        const quotes = [
+            { text: "Le succès, c’est tomber sept fois, se relever huit.", author: "Proverbe japonais" },
+            { text: "La vie, c'est comme une bicyclette, il faut avancer pour ne pas perdre l'équilibre.", author: "Albert Einstein" },
+            { text: "On a deux vies, et la deuxième commence quand on se rend compte qu’on n’en a qu’une.", author: "Confucius" }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").textContent = quotes[randomIndex].text;
+            document.getElementById("author").textContent = "- " + quotes[randomIndex].author;
+        }
+    </script>
+</body>
+</html>
