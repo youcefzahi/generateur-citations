@@ -25,10 +25,21 @@
             { text: "On a deux vies, et la deuxième commence quand on se rend compte qu’on n’en a qu’une.", author: "Confucius" }
         ];
 
+        const quoteElement = document.getElementById("quote");
+        const authorElement = document.getElementById("author");
+
         function generateQuote() {
+            if (!quotes.length) {
+                quoteElement.textContent = "Aucune citation n'est disponible pour le moment.";
+                authorElement.textContent = "";
+                return;
+            }
+
             const randomIndex = Math.floor(Math.random() * quotes.length);
-            document.getElementById("quote").textContent = quotes[randomIndex].text;
-            document.getElementById("author").textContent = "- " + quotes[randomIndex].author;
+            const selectedQuote = quotes[randomIndex];
+
+            quoteElement.textContent = selectedQuote.text;
+            authorElement.textContent = selectedQuote.author ? "- " + selectedQuote.author : "- Auteur inconnu";
         }
     </script>
 </body>
