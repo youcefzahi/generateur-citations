@@ -1,0 +1,12 @@
+{
+  "name": "generateur-citations",
+  "version": "1.0.0",
+  "description": "Générateur de citations aléatoires",
+  "main": "src/citations.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
